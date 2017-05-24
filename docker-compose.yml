@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  servuo:
+    build: ./servuo
+    image: 'servuo'
+    restart: always
+    ports:
+    - "2593:2593"
+    volumes:
+      - ./servuo-data:/UO
+#    command: ping localhost
