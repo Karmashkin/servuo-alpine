@@ -14,7 +14,7 @@ yum upgrade python* -y && yum install epel-release -y && yum install -y python-p
 
 2. clone this rep & edit some vars ;)
 
-git clone https://git.uadreams.com/diffusion/...git
+git clone https://github.com/...git
 
 3. Build n Run docker image
 
