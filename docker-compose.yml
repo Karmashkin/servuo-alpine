@@ -3,8 +3,9 @@ version: '2'
 services:
   servuo:
     build: ./servuo
-    image: 'servuo'
+    image: 'servuo-alpine'
     restart: always
+#    mem_limit: 2048m
     ports:
     - "2593:2593"
     volumes:
