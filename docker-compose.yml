@@ -10,4 +10,5 @@ services:
     - "2593:2593"
     volumes:
       - ./servuo-data:/UO
+    network_mode: host
 #    command: ping localhost
