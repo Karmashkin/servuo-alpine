@@ -3,22 +3,10 @@
 #HOWTO RUN
 
 1. Install docker & docker-compose & maybe git ;)
-
-- docker
-printf "[dockerrepo]\nname=Docker Repository\nbaseurl=https://yum.dockerproject.org/repo/main/centos/7/\nenabled=1\ngpgcheck=1\ngpgkey=https://yum.dockerproject.org/gpg" > /etc/yum.repos.d/docker.repo
-
-yum install docker-engine -y && systemctl enable docker.service && systemctl start docker
-
-- docker-compose
-yum upgrade python* -y && yum install epel-release -y && yum install -y python-pip && pip install docker-compose && pip install backports.ssl_match_hostname --upgrade
-
 2. clone this rep & edit some vars ;)
-
-git clone https://github.com/...git
-
 3. Build n Run docker image
 
-cd clone.folder && time docker-compose up -d
+cd clone.folder && docker-compose build && docker-compose up -d
 
 
 NOTES:
@@ -29,25 +17,46 @@ su - uo
 cd /UO
 git clone https://github.com/ServUO/ServUO
 edit configs, maybe use vi editor ;) muhhahaha
-make & create admin user
+run make, then create admin user
 
-login in client
+login admin in client
+
 run this
-[xmlload Spawns/felucca.xml
-[xmlload Spawns/ilshenar.xml
-[xmlload Spawns/malas.xml
-[xmlload Spawns/termur.xml
-[xmlload Spawns/tokuno.xml
-[xmlload Spawns/trammel.xml
-and maybe other :)
-[genchampions
-
-then in GM panel "recreate world"
-
-save and shutdown server
+```
+[createworld
+```
 
 comment command: in docker-compose.yml
 
 ```
 
+NOTES:
+```
+[gmbody
+```
 
+Adding Runic Tools
+```
+[add runic"tool" "resource" "uses"
+
+Tool = The request tool
+Resource = The resouce or type of material used
+Uses = The amount of uses it will have
+
+Examples:
+Runic Sewing Kit:
+[add runicsewingkit barbedleather 100
+(leather, spinedleather, hornedleather, barbedleather)
+
+Runic Hammer:
+[add runichammer valorite 100
+(DullCopper, ShadowIron, Copper, Bronze, Gold, Agapite, Verite, Valorite)
+
+Runic Saw:
+[add runicsaw heartwood 100
+(oak, ash, yew, bloodwood, heartwood, frostwood)
+
+Runic FletcherTool:
+[add runicfletchertool heartwood 100
+(oak, ash, yew, bloodwood, heartwood, frostwood)
+```

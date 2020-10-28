@@ -1,13 +1,13 @@
-version: '2'
+version: '2.1'
 
 services:
   servuo:
     build: ./servuo
-    image: 'servuo-alpine'
-    restart: always
+    image: 'servuo-alpine-centos'
+#    restart: always
 #    mem_limit: 2048m
-    ports:
-    - "2593:2593"
+#    ports:
+#    - "2593:2593/tcp"
     volumes:
       - ./servuo-data:/UO
     network_mode: host
