@@ -6,8 +6,9 @@
 2. clone this rep & edit some vars ;)
 3. Build n Run docker image
 
+```
 cd clone.folder && docker-compose build && docker-compose up -d
-
+```
 
 NOTES:
 ```
@@ -16,6 +17,7 @@ then exec into condiner (docker exec -ti container_name sh)
 su - uo
 cd /UO
 git clone https://github.com/ServUO/ServUO
+```
 edit configs, maybe use vi editor ;) muhhahaha
 run make, then create admin user
 
